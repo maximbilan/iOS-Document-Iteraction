@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
 		let epubURL = NSBundle.mainBundle().URLForResource("test", withExtension: "epub")
 		documentInteractionController.URL = epubURL
 		
-		if documentInteractionController.presentOpenInMenuFromRect(openButton.bounds, inView: view, animated: true) {
+		if !documentInteractionController.presentOpenInMenuFromRect(openButton.bounds, inView: view, animated: true) {
 			print("You don't have an app installed that can handle ePub files.")
 		}
 	}
