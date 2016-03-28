@@ -37,6 +37,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9420BD5E1CA9A8FE007E329D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				94505E7F1CA98B5700A884D6 /* AppDelegate.swift */,
+				94505E811CA98B5700A884D6 /* ViewController.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		9420BD5F1CA9A90A007E329D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				94505E831CA98B5700A884D6 /* Main.storyboard */,
+				94505E881CA98B5700A884D6 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		9420BD601CA9A918007E329D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94505E8B1CA98B5700A884D6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9420BD611CA9A930007E329D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9420BD5C1CA9A4A5007E329D /* test.epub */,
+				94505E861CA98B5700A884D6 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		94505E731CA98B5700A884D6 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +91,10 @@
 		94505E7E1CA98B5700A884D6 /* DocumentInteraction */ = {
 			isa = PBXGroup;
 			children = (
-				9420BD5C1CA9A4A5007E329D /* test.epub */,
-				94505E7F1CA98B5700A884D6 /* AppDelegate.swift */,
-				94505E811CA98B5700A884D6 /* ViewController.swift */,
-				94505E831CA98B5700A884D6 /* Main.storyboard */,
-				94505E861CA98B5700A884D6 /* Assets.xcassets */,
-				94505E881CA98B5700A884D6 /* LaunchScreen.storyboard */,
-				94505E8B1CA98B5700A884D6 /* Info.plist */,
+				9420BD5E1CA9A8FE007E329D /* Sources */,
+				9420BD611CA9A930007E329D /* Resources */,
+				9420BD5F1CA9A90A007E329D /* UI */,
+				9420BD601CA9A918007E329D /* Supporting Files */,
 			);
 			path = DocumentInteraction;
 			sourceTree = "<group>";
