@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UIDocumentInteractionControllerDelegate {
 
+	// MARK: - Outlets
+	
 	@IBOutlet weak var openButton: UIButton!
 	
+	// MARK: - Document Interaction Controller
+	
 	private var documentInteractionController = UIDocumentInteractionController()
+	
+	// MARK: - UIViewController methods
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
