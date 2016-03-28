@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UIDocumentInteractionControllerDelegate {
 
+	@IBOutlet weak var openButton: UIButton!
+	
 	private var documentInteractionController = UIDocumentInteractionController()
 	
 	override func viewDidLoad() {
@@ -18,6 +20,12 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
 		documentInteractionController.delegate = self
 	}
 
+	// MARK: - Actions
+	
+	@IBAction func openButtonAction(sender: UIButton) {
+		
+	}
+	
 	// MARK: - UIDocumentInteractionControllerDelegate
 	
 	func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
