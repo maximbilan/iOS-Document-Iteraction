@@ -23,7 +23,12 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
 	// MARK: - Actions
 	
 	@IBAction func openButtonAction(sender: UIButton) {
+		let epubURL = NSBundle.mainBundle().URLForResource("test", withExtension: "epub")
+		documentInteractionController.URL = epubURL
 		
+		if documentInteractionController.presentOpenInMenuFromRect(openButton.bounds, inView: view, animated: true) {
+			print("You don't have an app installed that can handle ePub files.")
+		}
 	}
 	
 	// MARK: - UIDocumentInteractionControllerDelegate
