@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
 	
 	// MARK: - Document Interaction Controller
 	
-	private var documentInteractionController = UIDocumentInteractionController()
+	fileprivate var documentInteractionController = UIDocumentInteractionController()
 	
 	// MARK: - UIViewController methods
 	
@@ -28,18 +28,18 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
 
 	// MARK: - Actions
 	
-	@IBAction func openButtonAction(sender: UIButton) {
-		let epubURL = NSBundle.mainBundle().URLForResource("test", withExtension: "epub")
-		documentInteractionController.URL = epubURL
+	@IBAction func openButtonAction(_ sender: UIButton) {
+		let epubURL = Bundle.main.url(forResource: "test", withExtension: "epub")
+		documentInteractionController.url = epubURL
 		
-		if !documentInteractionController.presentOpenInMenuFromRect(openButton.bounds, inView: view, animated: true) {
+		if !documentInteractionController.presentOpenInMenu(from: openButton.bounds, in: view, animated: true) {
 			print("You don't have an app installed that can handle ePub files.")
 		}
 	}
 	
 	// MARK: - UIDocumentInteractionControllerDelegate
 	
-	func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
+	func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
 		return self
 	}
 
