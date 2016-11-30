@@ -1,4 +1,4 @@
-# iOS How to copy epub files from your app to iBooks app
+# iOS: How to copy epub files from your app to iBooks app
 
 ![alt tag](https://raw.github.com/maximbilan/iOS-Document-Iteraction/master/img/img1.png)
 
