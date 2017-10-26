@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIDocumentInteractionControllerDelegate {
+class ViewController: UIViewController {
 
 	// MARK: - Outlets
 	
@@ -29,19 +29,31 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
 	// MARK: - Actions
 	
 	@IBAction func openButtonAction(_ sender: UIButton) {
-		let epubURL = Bundle.main.url(forResource: "test", withExtension: "epub")
-		documentInteractionController.url = epubURL
-		
-		if !documentInteractionController.presentOpenInMenu(from: openButton.bounds, in: view, animated: true) {
-			print("You don't have an app installed that can handle ePub files.")
+		if let epubURL = Bundle.main.url(forResource: "test", withExtension: "epub") {
+			
+			// In iOS 11 `copy to iBooks` is not working if the file is in bundle, so this code for copying from the app bundle to Documents
+			let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+			let destinationPath = documentDirectoryPath.appendingPathComponent("test.epub")
+			let destinationURL = URL(fileURLWithPath: destinationPath)
+			do {
+				try FileManager.default.copyItem(at: epubURL, to: destinationURL)
+			}
+			catch {}
+			
+			documentInteractionController.url = destinationURL
+			if !documentInteractionController.presentOpenInMenu(from: openButton.bounds, in: view, animated: true) {
+				print("You don't have an app installed that can handle ePub files.")
+			}
 		}
 	}
-	
-	// MARK: - UIDocumentInteractionControllerDelegate
+
+}
+
+extension ViewController: UIDocumentInteractionControllerDelegate {
 	
 	func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
 		return self
 	}
-
+	
 }
 
