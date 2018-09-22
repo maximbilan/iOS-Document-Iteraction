@@ -18,4 +18,4 @@ if !controller.presentOpenInMenuFromRect(button.bounds, inView: view, animated: 
 
 ![alt tag](https://raw.github.com/maximbilan/iOS-Document-Iteraction/master/img/img2.png)
 
-Class <i><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html">UIDocumentInteractionController</a></i> has other features, you can read more details in <i>Apple</i> documentation.
+A class <i><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html">UIDocumentInteractionController</a></i> has other features, you can read more details in <i>Apple</i> documentation.
